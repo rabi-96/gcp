@@ -1,4 +1,4 @@
-project_id    = "gcp-poc-project-285306"
+project_id    = "billmonitor"
 region        = "asia-south1"
 zone          = "asia-south1-a"
 instance_name = "rabi"
