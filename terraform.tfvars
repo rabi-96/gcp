@@ -1,0 +1,5 @@
+project_id    = "gcp-poc-project-285306"
+region        = "asia-south1"
+zone          = "asia-south1-a"
+instance_name = "rabi"
+machine_type  = "n1-standard-2"
