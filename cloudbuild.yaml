@@ -1,5 +1,5 @@
 steps:
-  - name: 'hashicorp/terraform:1.7.4'
+  - name: 'hashicorp/terraform:1.12.2'
     entrypoint: 'sh'
     args:
       - '-c'
