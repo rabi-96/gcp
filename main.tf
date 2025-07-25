@@ -5,12 +5,6 @@ terraform {
   }
 }
 
-provider "google" {
-  project = "billmonitor"
-  region  = "asia-south1"
-  zone    = "asia-south1-a"
-}
-
 resource "google_compute_instance" "vm_instance" {
   name         = "rabi"
   machine_type = "n1-standard-2"
