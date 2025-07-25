@@ -1,7 +1,22 @@
+terraform {
+  backend "gcs" {
+    bucket = "terraform-state-billmonitor"
+    prefix = "terraform/state"
+  }
+}
+
+provider "google" {
+  project = "billmonitor"
+  region  = "asia-south1"
+  zone    = "asia-south1-a"
+}
+
 resource "google_compute_instance" "vm_instance" {
-  name         = var.instance_name
-  machine_type = var.machine_type
-  zone         = var.zone
+  name         = "rabi"
+  machine_type = "n1-standard-2"
+  zone         = "asia-south1-a"
+
+  tags = ["rabi", "terraform"]
 
   boot_disk {
     initialize_params {
@@ -13,15 +28,10 @@ resource "google_compute_instance" "vm_instance" {
 
   network_interface {
     network = "default"
-
-    access_config {
-      // Assigns a public IP
-    }
+    access_config {}
   }
 
   metadata = {
     startup-script = "echo 'VM Rabi initialized successfully' > /var/tmp/init.log"
   }
-
-  tags = ["terraform", "rabi"]
 }

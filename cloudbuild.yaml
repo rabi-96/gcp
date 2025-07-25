@@ -7,6 +7,5 @@ steps:
     args:
       - '-c'
       - |
-        terraform init
-        terraform plan
-        terraform destroy -auto-approve
+        terraform init -reconfigure
+        terraform apply -auto-approve
