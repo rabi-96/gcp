@@ -1,7 +1,7 @@
 variable "project_id" {
   description = "GCP Project ID"
   type        = string
-  default     = "gcp-poc-project-285306"
+  default     = "billmonitor"
 }
 
 variable "region" {
